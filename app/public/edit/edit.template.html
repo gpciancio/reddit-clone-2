@@ -1,0 +1,24 @@
+
+    <form novalidate name="$ctrl.postForm">
+      <div ng-class="{'has-error' : $ctrl.postForm.title.$invalid && $ctrl.postForm.title.$touched}">
+        <label for="title">Title</label>
+        <input id="title" class="form-control" ng-model="$ctrl.post.title"  name="title" required>
+      </div>
+      <div ng-class="{'has-error' : $ctrl.postForm.body.$invalid && $ctrl.postForm.body.$touched}">
+        <label for="body">Body</label>
+        <textarea id="body" class="form-control" ng-model="$ctrl.post.body"  name="body" required></textarea>
+      </div>
+      <div ng-class="{'has-error' : $ctrl.postForm.author.$invalid && $ctrl.postForm.author.$touched}">
+        <label for="author">Author</label>
+        <input id="author" class="form-control" ng-model="$ctrl.post.author"  name="author" required>
+      </div>
+      <div ng-class="{'has-error' : $ctrl.postForm.image_url.$invalid && $ctrl.postForm.imag_url.$touched}">
+        <label for="image_url">Image URL</label>
+        <input id="image_url" class="form-control" ng-model="$ctrl.post.image_url"  name="image" required>
+      </div>
+      <div class="form-group">
+        <button ng-disabled="$ctrl.postForm.$invalid" ng-click="$ctrl.edit($ctrl.post)" type="submit" class="btn btn-primary">
+          Update
+        </button>
+      </div>
+    </form>
